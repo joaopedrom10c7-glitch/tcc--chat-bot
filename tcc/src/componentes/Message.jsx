@@ -1,6 +1,15 @@
-function Message(){
-    return(
-        <H1>Sou o Message</H1>
-    )
-}
-export default Message
+import React from 'react';
+
+const Message = ({ message }) => {
+  if (!message) {
+    return null;
+  }
+
+  return (
+    <div className={`message ${message.sender}`}>
+      {message.text}
+    </div>
+  );
+};
+
+export default Message;
